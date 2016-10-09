@@ -23,13 +23,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    public void increment(View view){
+        int quantity = 3;
+        display(quantity);
+    }
+    public void decrement(View view){
+        int quantity = 1;
+        display(quantity);
+    }
 
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        display(5);
-        displayPrice(5*2);
+        int numberOfCoffees = 2;
+        display(numberOfCoffees);
+        displayPrice(5*numberOfCoffees);
     }
     /**
      * This method displays the given price on the screen.
