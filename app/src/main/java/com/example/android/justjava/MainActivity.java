@@ -39,17 +39,11 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         //(quantity);
         int price = quantity*5;
-        String str1 = "Total:"+price+"\n Thank you";
+        String str1 ="quantity:"+quantity+ "\nTotal:"+price+"\nThank you";
         displayMessage(str1);
 
     }
-    /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
+
     private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
