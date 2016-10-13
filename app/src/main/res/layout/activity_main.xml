@@ -12,10 +12,22 @@
     tools:context="com.example.android.justjava.MainActivity">
 
     <TextView
+        android:text="toppings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/textView"
+        android:textAllCaps="true"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Whipped Cream"
+        android:layout_marginBottom="24dp"
+        android:textSize="16sp"/>
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quantity"
-
         android:textAllCaps="true" />
 
     <LinearLayout
