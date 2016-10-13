@@ -22,8 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Whipped Cream"
+        android:paddingLeft="24dp"
         android:layout_marginBottom="24dp"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:id="@+id/whipped_cream_CheckBox"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,14 +67,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="price"
-        android:textAllCaps="true" />
+        android:text="Order Summary"
+        android:textAllCaps="false" />
 
     <TextView
         android:id="@+id/price_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="￥10"
+        android:text=""
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 
