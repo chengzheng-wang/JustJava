@@ -45,12 +45,17 @@ public class MainActivity extends AppCompatActivity {
         boolean hasWhippedCream = whippedCream.isChecked();
         CheckBox chocolate = (CheckBox)findViewById(R.id.chocolate_CheckBox);
         boolean hasChocolate = chocolate.isChecked();
-        int price = quantity*5;
+        int price = 5;
+        if(hasWhippedCream)
+            price+=1;
+        if(hasChocolate)
+            price+=2;
+        price*=quantity;
         StringBuilder str1 = new StringBuilder();
         str1.append("Name:"+name+"\n");
         str1.append("Add whipped cream? "+hasWhippedCream+"\n");
         str1.append("Add Chocolate? "+hasChocolate+"\n");
-        str1.append("Quantity"+quantity+"\n");
+        str1.append("Quantity:"+quantity+"\n");
         str1.append("Total Price:$"+price+"\n");
         str1.append("Thank you");
         displayMessage(str1.toString());
