@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -28,10 +29,20 @@ public class MainActivity extends AppCompatActivity {
     int quantity = 2;
     public void increment(View view){
         quantity++;
+        if(quantity>100){
+            quantity=100;
+            Toast.makeText(this,"You can not order more than 100 cups",Toast.LENGTH_SHORT).show();
+            return;
+        }
         display(quantity);
     }
     public void decrement(View view){
         quantity--;
+        if(quantity<1) {
+            quantity = 1;
+            Toast.makeText(this,"You can not order less than 1 cup",Toast.LENGTH_SHORT).show();
+            return;
+        }
         display(quantity);
     }
 
