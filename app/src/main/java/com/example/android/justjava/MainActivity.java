@@ -6,6 +6,8 @@ package com.example.android.justjava;
  * package com.example.android.justjava;
  */
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.NumberFormat;
+
+import static android.R.attr.order;
 
 /**
  * This app displays an order form to order coffee.
@@ -69,13 +73,19 @@ public class MainActivity extends AppCompatActivity {
         str1.append("Quantity:"+quantity+"\n");
         str1.append("Total Price:$"+price+"\n");
         str1.append("Thank you");
-        displayMessage(str1.toString());
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_SUBJECT,"Just java order for"+name);
+        intent.putExtra(Intent.EXTRA_TEXT,str1.toString());
+        //有可以接住这个intent的应用，那么就执行这个intent
+        if(intent.resolveActivity(getPackageManager())!=null){
+            startActivity(intent);
+        }
+        else
+            {
+                Toast.makeText(this,"No apps",Toast.LENGTH_SHORT).show();
+            }
 
-    }
-
-    private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
     }
     /**
      * This method displays the given quantity value on the screen.
