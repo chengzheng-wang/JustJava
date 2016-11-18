@@ -1,1 +1,2 @@
-A coffee ordering android aplication learning from udacity android basis course
+A simple android aplication for coffee ordering.
+This is the one for pratice on the way when I'm learning android.
